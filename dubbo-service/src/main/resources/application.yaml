@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: alibaba-nacos-provide
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #新的驱动需要在URL中添加时区设置，否则会报错
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      max-lifetime: 1800000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: provide-service-pool
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    # 设置一级缓存作用范围，默认是会话级别
+    local-cache-scope: statement
+  global-config:
+    db-config:
+      db-type: mariadb
+      id-type: id_worker
+  mapper-locations: classpath*:mapper/*.xml
+
+dubbo:
+  application:
+    name: dubbo-provider
+    owner: Amoe
+    organization: io.amoe
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    port: 20881
+    name: dubbo
