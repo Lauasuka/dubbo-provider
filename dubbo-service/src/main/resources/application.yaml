@@ -8,7 +8,7 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     #新的驱动需要在URL中添加时区设置，否则会报错
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     hikari:
       minimum-idle: 5
       idle-timeout: 180000
@@ -37,6 +37,7 @@ dubbo:
     organization: io.amoe
   registry:
     address: zookeeper://127.0.0.1:2181
+    server:
   protocol:
     port: 20881
     name: dubbo
