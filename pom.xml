@@ -34,7 +34,7 @@
         <zookeeper.version>3.4.14</zookeeper.version>
         <zkclient.version>0.10</zkclient.version>
         <curator.version>4.2.0</curator.version>
-        <netty.version>4.1.32.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <dubbo.version>2.7.0</dubbo.version>
         <dubbo.spring.boot.starter.version>2.7.0</dubbo.spring.boot.starter.version>
         <mysql.version>8.0.13</mysql.version>
